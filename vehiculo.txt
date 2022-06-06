@@ -1,0 +1,14 @@
+id
+placa
+fecha_horaIngreso
+fecha_horaSalida
+tipo
+modelo
+id_Celda
+descripcion
+total_Pagar
+
+get buscar todos
+get buscar por id
+post insertar
+put editar

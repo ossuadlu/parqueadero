@@ -1,0 +1,12 @@
+id
+nombre
+cedula
+turno
+telefono
+estado
+salario
+
+get buscar todos
+get buscar por id
+post insertar
+put editar
