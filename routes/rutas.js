@@ -1,6 +1,8 @@
 import express from 'express'
 export let rutas=express.Router()
 
+let administrador = new administrador()
+
 rutas.post('/api/parqueadero/admin/',insertar)
 rutas.get('/api/parqueadero/admin/',buscarTodos)
 rutas.get('/api/parqueadero/admin/:id/',buscarPorId)

@@ -1,9 +1,0 @@
-id
-numero celda
-tarifa
-estado
-
-get buscar todos
-get buscar por id
-post insertar
-put editar
