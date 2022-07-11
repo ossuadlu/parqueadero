@@ -29,4 +29,4 @@ const Vehiculo=new Schema({
     }
 })
 
-export const modeloAdministrador=mongoose.model('administradores',Administrador)
+export const modeloVehiculo=mongoose.model('vehiculos',Vehiculo)
