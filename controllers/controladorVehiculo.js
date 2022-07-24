@@ -60,10 +60,10 @@ class ControladorVehiculo{
             //restar las dos fechas y obtener la diferencia de tiempo en minutos
             let diferencia=fechaSalida.getTime()-fechaEntrada.getTime()
             let diferenciaEnSegundos=diferencia/1000
-            let diferenciaEnMinutos=diferenciaEnSegundos/60
-
+            let diferenciaEnMinutos=Math.round(diferenciaEnSegundos/60)
+            datos.minutos=diferenciaEnMinutos 
         //calculamos  el costo parqueadero
-            let costo=diferenciaEnMinutos*tarifa
+           let costo=diferenciaEnMinutos*tarifa
             //armo el paquete de datos actualizar
             datos.fecha_Salida=fechaSalida
             datos.total_pago=costo

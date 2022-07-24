@@ -1,19 +1,31 @@
 import express from 'express'
+
+import {ControladorCelda} from '../controllers/ControladorCelda.js'
+import {ControladorVehiculo} from '../controllers/ControladorVehiculo.js'
+import {ControladorAdmin} from '../controllers/ControladorAdmin.js'
+
+let controladorCelda=new ControladorCelda()
+let controladorVehiculo= new ControladorVehiculo()
+let controladorAdmin=new ControladorAdmin()
+
 export let rutas=express.Router()
 
-let administrador = new administrador()
+//Rutas administradores
+rutas.get('/api/v1/parqueadero/admin/', controladorAdmin.buscarAdministradores)
+rutas.get('/api/v1/parqueadero/admin/:id/parking', controladorAdmin.buscarAdministrador)
+rutas.post('/api/v1/parqueadero/admin/',controladorAdmin.agregarAdministrador)
+rutas.put('/api/v1/parqueadero/admin/:id/', controladorAdmin.editarAdministrador)
 
-rutas.post('/api/parqueadero/admin/',insertar)
-rutas.get('/api/parqueadero/admin/',buscarTodos)
-rutas.get('/api/parqueadero/admin/:id/',buscarPorId)
-rutas.put('/api/parqueadero/admin/:id/',editar)
+//Rutas celdas
 
-rutas.post('/api/parqueadero/celda/',insertar)
-rutas.get('/api/parqueadero/celda/',buscarTodos)
-rutas.get('/api/parqueadero/celda/:id/',buscarPorId)
-rutas.put('/api/parqueadero/celda/:id/',editar)
+rutas.get('/api/v1/parqueadero/celdas/', controladorCelda.buscarCeldas)
+rutas.get('/api/v1/parqueadero/celda/:id/', controladorCelda.buscarCelda)
+rutas.post('/api/v1/parqueadero/celda/',controladorCelda.agregarCelda)
+rutas.put('/api/v1/parqueadero/celda/:id/', controladorCelda.editarCelda)
 
-rutas.post('/api/parqueadero/vehiculo/',insertar)
-rutas.get('/api/parqueadero/vehiculo/',buscarTodos)
-rutas.get('/api/parqueadero/vehiculo/:id/',buscarPorId)
-rutas.put('/api/parqueadero/vehiculo/:id/globantAdnygit status',editar)
+//Rutas vehiculos
+
+rutas.get('/api/v1/parqueadero/vehiculos/', controladorVehiculo.buscarVehiculo)
+rutas.get('/api/v1/parqueadero/vehiculo/:id/', controladorVehiculo.buscarVehiculo)
+rutas.post('/api/v1/parqueadero/vehiculo/',controladorVehiculo.agregarVehiculo)
+rutas.put('/api/v1/parqueadero/vehiculo/:id/', controladorVehiculo.editarVehiculo)
